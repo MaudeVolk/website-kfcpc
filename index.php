@@ -198,7 +198,7 @@ first release: July 21, 2017
               <li><a href="http://www.cumberland.org/center/CPC_Home_Page/Home.html" target="_blank">Cumberland Presbyterian Denomination</a></li>
 			  <li><a href="https://www.camcabincrafts.com/" target="_blank">CAM Cabin Crafts</a></li>
               <li><a href="http://cpcmc.org/evotions/" target="_blank">eVotions</a></li>
-			  <li><a href="http://jcls.jazzercise.com/facility/jazzercise-knoxville-first-cumberland-presbyterian-church" target="_blank">Jazzercise</a></i>
+			  <li><a href="http://jcls.jazzercise.com/facility/jazzercise-knoxville-first-cumberland-presbyterian-church" target="_blank">Jazzercise</a></li>
               <li><a href="http://www.pack20knoxville.scoutlander.com/publicsite/unithome.aspx?UID=19373" target="_blank">Cub Scouts</a></li>
               <li><a href="http://troop20knoxville.scoutlander.com/publicsite/unithome.aspx?UID=23394" target="_blank">Boy Scouts</a></li>
             </ul>
