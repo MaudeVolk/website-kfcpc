@@ -14,7 +14,7 @@ Many thanks for his continued encouragement and the patience of the church
 -->
 
 <style>
-table 
+table {
     border-collapse:collapse;
     font-size: 1em;
 }
@@ -200,7 +200,7 @@ function calendar_info($date_data, $month_shift){
   $month_num = date("m", $desired_month);
   // Below yields the year and month formated for use elsewhere.
   $yr_month = $the_year."-".$month_num."-";
-  $month_name = date("F", $desired_month); // get the month in 3-letter abbreviation
+  $month_name = date("F", $desired_month); // get the full name of the month
   $some_time= mktime(0, 0, 0, $month_num, 1, $the_year); // for some reason $start_day does not always work like the other functions
   $start_day = date("l", $some_time);
   $max_days = cal_days_in_month(CAL_GREGORIAN, $month_num, $the_year); // find out maximum number of days in the month
