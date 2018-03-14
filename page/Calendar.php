@@ -28,7 +28,7 @@ table th {
 table th,td {
     vertical-align: text-top;
     width: 14.28571428571429%;
-    border:4px solid black;
+    border:1px solid black;
 }
 table td {
     padding: 0;
@@ -579,7 +579,7 @@ function day_schedule($particular_date, $maxlines, $date, $schedule){
     //day_schedule($year_month.first_week("Sunday1", $ms), $maxlines, $date, $schedule)
     $print_this = "<table>
     <tr>
-    <td colspan = 7><h3>".$name."  ".$year."</h3></td>
+    <td colspan = 7 style='background-color:#a0a0b0;color:white'><h3 >".$name."  ".$year."</h3></td>
     </tr>
     <tr>
     <th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th>
