@@ -29,7 +29,7 @@ first release: July 21, 2017
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Demo site for Knoxville First Cumberland Presbyterian Church">
 	<meta name="keywords" content="Church, Presbyterian, Cumberland, Christian School, Jazzercise, Knoxville, Service, Rocky Hill, West Town Mall, Fellowship">
@@ -252,6 +252,15 @@ first release: July 21, 2017
           </ul>
 		  
         </div><!-- end sidebar content -->
+          <footer>
+              <a class="replaceContent social-link" name="contact">Contact</a> |
+              <a href="https://www.facebook.com/Knoxville-First-Cumberland-Presbyterian-Church-219987585273/" class="social-link" target="_blank"><img src="images/logo/facebook-icon-preview-1-400x400.png" class="social-link-img"/></a> |
+              <a class="replaceContent social-link" name="map">Map</a> |
+              <a href="#" class="social-link">Give</a>
+              <!-- count.php is a counter and count_file.txt holds the number for count.php to access -->
+              <p style="color:blue"><?php include "count.php" ?> visitors</p>
+              <!-- Close the footer for the page -->
+          </footer>
       </div><!-- end Column 1 of row 3 -->
 
       <!-- Column 2 of row 3 -->
@@ -261,15 +270,7 @@ first release: July 21, 2017
     </div><!-- end row 3 -->
 
     <!-- Row 4, footer -->
-    <footer>
-            <a class="replaceContent social-link" name="contact">Contact</a> |
-            <a href="https://www.facebook.com/Knoxville-First-Cumberland-Presbyterian-Church-219987585273/" class="social-link" target="_blank"><img src="images/logo/facebook-icon-preview-1-400x400.png" class="social-link-img"/></a> |
-            <a class="replaceContent social-link" name="map">Map</a> |
-            <a href="#" class="social-link">Give</a>
-			<!-- count.php is a counter and count_file.txt holds the number for count.php to access -->
-            <p style="color:blue"><?php include "count.php" ?> visitors</p>
-            <!-- Close the footer for the page -->
-   </footer>
+
    
 </div><!-- close container-->
 
