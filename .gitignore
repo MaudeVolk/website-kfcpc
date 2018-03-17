@@ -50,3 +50,16 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+#File that changes count
+count_file.txt
+
+#setup files
+bitnami.css
+dashboard/*
+xampp*
+apache*
+.idea*
+favicon.ico
+anonymous*
+applications.html

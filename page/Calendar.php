@@ -28,7 +28,7 @@ table th {
 table th,td {
     vertical-align: text-top;
     width: 14.28571428571429%;
-    border:4px solid black;
+    border:1px solid black;
 }
 table td {
     padding: 0;
@@ -200,7 +200,7 @@ function calendar_info($date_data, $month_shift){
   $month_num = date("m", $desired_month);
   // Below yields the year and month formated for use elsewhere.
   $yr_month = $the_year."-".$month_num."-";
-  $month_name = date("M", $desired_month); // get the month in 3-letter abbreviation
+  $month_name = date("F", $desired_month); // get the full name of the month
   $some_time= mktime(0, 0, 0, $month_num, 1, $the_year); // for some reason $start_day does not always work like the other functions
   $start_day = date("l", $some_time);
   $max_days = cal_days_in_month(CAL_GREGORIAN, $month_num, $the_year); // find out maximum number of days in the month
@@ -579,7 +579,7 @@ function day_schedule($particular_date, $maxlines, $date, $schedule){
     //day_schedule($year_month.first_week("Sunday1", $ms), $maxlines, $date, $schedule)
     $print_this = "<table>
     <tr>
-    <td colspan = 7><h3>".$name.".  ".$year."</h3></td>
+    <td colspan = 7 style='background-color:#a0a0b0;color:white'><h3 >".$name."  ".$year."</h3></td>
     </tr>
     <tr>
     <th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th>
@@ -655,11 +655,11 @@ $month_plus2 = month_table("+2 Month", $maxlines, $date, $schedule);
 // Three months from now
 $month_plus3 = month_table("+3 Month", $maxlines, $date, $schedule);
 
-$last_month_name = calendar_info("month-name", "-1 Month").". ".calendar_info("year", "-1 Month");
-$current_month_name = calendar_info("month-name", "0 Month").". ".calendar_info("year", "0 Month");
-$next_month_name = calendar_info("month-name", "+1 Month").". ".calendar_info("year", "+1 Month");
-$month_plus2_name = calendar_info("month-name", "+2 Month").". ".calendar_info("year", "+2 Month");
-$month_plus3_name = calendar_info("month-name", "+3 Month").". ".calendar_info("year", "+3 Month");
+$last_month_name = calendar_info("month-name", "-1 Month")." ".calendar_info("year", "-1 Month");
+$current_month_name = calendar_info("month-name", "0 Month")." ".calendar_info("year", "0 Month");
+$next_month_name = calendar_info("month-name", "+1 Month")." ".calendar_info("year", "+1 Month");
+$month_plus2_name = calendar_info("month-name", "+2 Month")." ".calendar_info("year", "+2 Month");
+$month_plus3_name = calendar_info("month-name", "+3 Month")." ".calendar_info("year", "+3 Month");
 ?>
 
 <!-- The following script displays different months depending on which button is clicked -->

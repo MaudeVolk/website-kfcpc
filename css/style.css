@@ -1,7 +1,7 @@
 * {
     -webkit-border-radius: 0 !important;
     -moz-border-radius: 0 !important;
-    border-radius: 0 !important;
+    border-radius: 0;
 	padding:0;
 	margin:0;
 }
@@ -149,6 +149,11 @@ ul li .left-list {
 
 .sidebar-content ul li:hover {
     text-shadow: 1px 1px #AAA;
+}
+
+footer{
+    background-color: white !important;
+    border-radius:15px !important;
 }
 
 .main-content p {
@@ -396,7 +401,7 @@ a.contactEntry:disabled {
         font-size: 1.5em;
     }
     .nav-bar-custom div#nav-bar {
-        width: 100%;info
+        width: 100%;
         margin: auto;
     }
     .nav-bar-custom div#nav-item {
@@ -416,13 +421,22 @@ a.contactEntry:disabled {
 		
 		
     }
+    .footer{
+        position: absolute;
+        margin-bottom: 0;
+
+
+    }
 	
 	/* the text list in the sidebar */
 	 .sidebar-content {
         
 		
     }
-	
+    footer {
+        padding: 0;
+        border-radius: 25px !important
+    }
     .main-content {
         padding-top: 1em;
         padding-left: 1em;
