@@ -52,7 +52,7 @@ Mkfile.old
 dkms.conf
 
 #File that changes count
-#count_file.txt
+count_file.txt
 
 #setup files
 bitnami.css
