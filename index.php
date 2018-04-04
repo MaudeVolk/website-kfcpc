@@ -239,8 +239,8 @@ first release: July 21, 2017
             <li>Sunday School</li>
             <li>9:30 AM</li>
 			<li><br/></li>
-            <!--  <li><a style="color:white" href="images/easter.jpg">Easter Schedule</a></li> -->
 
+            <!--  <li><a style="color:white" href="images/easter.jpg">Easter Schedule</a></li> -->
 
           </ul>
 		  
