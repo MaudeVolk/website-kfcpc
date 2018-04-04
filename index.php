@@ -239,13 +239,9 @@ first release: July 21, 2017
             <li>Sunday School</li>
             <li>9:30 AM</li>
 			<li><br/></li>
-              <li><a style="color:white" href="images/easter.jpg">Easter Schedule</a></li>
-			<!--
-			<li>Christmas Cantata</li>
-            <li>Dec. 17 at 6:00 PM</li>
-			<li><br/></li>
 
-			-->
+            <!--  <li><a style="color:white" href="images/easter.jpg">Easter Schedule</a></li> -->
+
           </ul>
 		  
         </div><!-- end sidebar content -->
