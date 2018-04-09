@@ -179,9 +179,9 @@ first release: July 21, 2017
             <ul class="dropdown-menu" role="menu">
               <li><a class="replaceContent" name="reservation"><span class="glyphicon glyphicon-send"></span> Reserve a room/area</a></li>
               <li><a class="replaceContent" name="calendar"><span class="glyphicon glyphicon-calendar"></span> Calendar</a></li>
-			  <li><a name="special_events" href="special_event_PDF/special_event.pdf" target = "_blank"><span class="glyphicon glyphicon-calendar"></span> Special Event </a></li>
+			  <!--<li><a name="special_events" href="special_event_PDF/special_event.pdf" target = "_blank"><span class="glyphicon glyphicon-calendar"></span> Special Event </a></li>-->	  
             </ul>
-        </div><!-- end Calendar button group -->
+        </div> <!-- end Calendar button group -->
 
         <!-- Connections button group -->
         <div class="btn-group" id="nav-item">
