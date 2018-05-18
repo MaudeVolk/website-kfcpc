@@ -142,6 +142,13 @@ ul li .left-list {
     border-radius: 0 0 20px 0 !important;
 }
 
+.increaseTop{
+    margin-top:2em;
+}
+.increaseBottom{
+    margin-bottom: 3em;
+}
+
 .sidebar-content {
     font-weight: normal;
     min-height: 20em;
@@ -357,8 +364,13 @@ a.contactEntry:disabled {
         display: none;
     }
     .sidebar-plain-service {
-        height:5%;
+        height:3%;
+        -webkit-border-radius: 0 0 20px 0 !important;
+        -moz-border-radius: 0 0 20px 0 !important;
+        border-radius: 0 0 20px 0 !important;
     }
+
+
     .sidebar-content{
         min-height: 15%;
     }
@@ -399,40 +411,46 @@ a.contactEntry:disabled {
 
 /* extra small screen */
 @media screen and (max-width: 767px) {
-	
-	.text-with-picture {
-	    margin-left:0;
+
+    .text-with-picture {
+        margin-left: 0;
     }
-	
+
     .title-bar img {
         display: none;
     }
+
     h1#titleText {
         font-size: 1.5em;
     }
+
     .nav-bar-custom div#nav-bar {
         width: 100%;
         margin: auto;
     }
+
     .nav-bar-custom div#nav-item {
         width: 50%;
         margin: auto;
     }
+
     #logoImage {
         display: none;
     }
+
     .title-bar div {
         height: 8em;
     }
-	
-	/* the sidebar including its title */
+
+    /* the sidebar including its title */
     .sidebar-plain-service {
         /*display: none;*/
-		
-		
+        -webkit-border-radius: 20px 0 20px 0 !important;
+        -moz-border-radius: 20px 0 20px 0 !important;
+        border-radius: 20px 0 20px 0 !important;
     }
 
-    .sidebar-content{
+    .sidebar-content {
         min-height: 15%;
     }
 
@@ -446,38 +464,61 @@ a.contactEntry:disabled {
         padding-left: 1em;
         /*padding-right: 1em;*/
     }
-	
-	/*
+
+    /*
     img#portrait {
         width: 70px;
         height: 70px;
     }
-	*/
-	
+    */
     #homeImage {
         display: none;
     }
-	
+
     #homeHeader {
         text-align: center;
     }
+
     div.contactDetails p.contactItem {
         font-size: 1.5em;
         border: 1px solid #000;
         padding: 1em;
         overflow-x: scroll;
     }
+
     #inputStartTime {
         display: block;
         width: 97%;
     }
+
     span.left {
         display: block;
         float: none;
         width: 97%;
     }
+
     #inputEndTime {
         display: block;
         width: 97%;
     }
 }
+    @media only screen
+        and (min-device-width : 320px)
+        and (max-device-width : 568px){
+        .sidebar-plain-service {
+            /*display: none;*/
+            -webkit-border-radius: 0 0 20px 20px !important;
+            -moz-border-radius: 0 0 20px 20px !important;
+            border-radius: 0 0 20px 20px !important;
+        }
+        .increaseTop{
+            margin-top: 0;
+        }
+        .increaseBottom{
+            margin-bottom:0;
+        }
+
+}
+
+
+
