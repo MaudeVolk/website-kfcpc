@@ -163,7 +163,7 @@ first release: July 21, 2017
               <ul class="dropdown-menu" role="menu">
                 <li><a class="replaceContent" name="prayer-list"><span class="glyphicon glyphicon-list"></span> Prayer List</a></li>
                 <li><a class="replaceContent" name="sermons"><span class="glyphicon glyphicon-music"></span> Listen to Sermons</a></li>
-			        	<li><a class="replaceContent" name="music"><span class="glyphicon glyphicon-music"></span> Listen to Music</a></li>
+                  <li><a class="replaceContent" name="music"><span class="glyphicon glyphicon-music"></span> Listen to Music</a></li>
                 <li><a class="replaceContent" name="publications"><span class="glyphicon glyphicon-file"></span> Cumberlander/Bulletin</a></li>
                 <li><a class="replaceContent" name="gallery"><span class="glyphicon glyphicon-picture"></span> Picture Gallery</a></li>
               </ul>      
@@ -229,16 +229,14 @@ first release: July 21, 2017
       <!-- Column 1 of row 3 -->
       <div class="col-lg-2 col-md-3 col-sm-3 sidebar-plain-service">
 	  
-        <h3>Services</h3>
+        <h3 class="increaseTop">Services</h3>
         <div class="sidebar-content">
 		
           <ul>
             <li>Sunday Service</li>
-            <li>10:45 AM</li>
-            <li><br/></li>
+            <li class="increaseBottom">10:45 AM</li>
             <li>Sunday School</li>
-            <li>9:30 AM</li>
-			<li><br/></li>
+            <li class="increaseBottom">9:30 AM</li>
             <li><a class="replaceContent" style="color:white" name="publications">Cumberlander/Bulletin</a></li>
             <!--  <li><a style="color:white" href="images/easter.jpg">Easter Schedule</a></li> -->
 
