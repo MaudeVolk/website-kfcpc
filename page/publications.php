@@ -35,7 +35,8 @@ Written by: Donald Nash <donaldnash1989@gmail.com>, Maude Volk <maudevolk@gmail.
       <!--<option value="">Select</option>-->
       <option value="bulletin">Sunday Worship</option>
       <option value="newsletter">The Cumberlander</option>
-      <option value="specialServicesDropdown">Special Services</option>
+      <!--<option value="specialServicesDropdown">Special Services</option>-->
+	  <option value="specialServices">Special Services</option>
     </select>
 	<p>Please disable pop-up blockers to fully access publications.</p>
   </div>
@@ -63,15 +64,36 @@ Written by: Donald Nash <donaldnash1989@gmail.com>, Maude Volk <maudevolk@gmail.
   
 </div>
 
-<div id="specialServicesDropdown" class="form-group control" hidden>
+<div id="specialServices" class="form-group control" hidden>
     
     <div class="col-lg-5 col-xs-12">
-	<p style="text-indent:0px">Select a year: </p>
+	<p style="text-indent:0px">Select from the list below: </p>
+	  <!--
       <select id="controlTwo" class="form-control" size="2">
-        <!--<option value="">Select one</option>-->
+        <option value="">Select one</option>
         <option value="this-year">Current Year</option>
         <option value="last-year">Last Year</option>
-      </select>
+      </select>-->
+	  <h5>
+	    <?php
+           $dir    = '../media/pdf/special-services';
+           $all_files = scandir($dir); // collects all files and puts them in an array
+           $services = array_slice($all_files, 2); // makes a new array without the first two elements, the . and the .. files
+           $serviceData = []; // an array to store the service data
+
+           // Handle the elements in the array, $sermons is the array, $service takes the place of $services[i] in a loop
+           foreach($services as $service)
+           {
+			  $length = strlen($service) - 4;
+			  $title = substr($service, 0, $length);
+			  // $string = "MICROSOFT CORP CIK#: 0000789019 (see all company filings)";
+//$newString = substr($string, 0, strpos($string, " CIK#"));
+//echo $newString;
+			  //$name_parts = explode(" ", $service);
+			  echo "<h4><a href = 'media/pdf/special-services/$service' target = '_blank'> ". $title . "</a></h4>";		  
+		   }	   
+	    ?>
+	  </h5>
     </div>
 </div>
 

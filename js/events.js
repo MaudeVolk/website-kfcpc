@@ -1,3 +1,5 @@
+//https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches
+
 var pubType = "";
 var oldControl = "";
 
@@ -41,8 +43,8 @@ $("#openPub").click(function(){
   
   // Use .get function to see if the document is there and if so open it, if not let the user try again.
   $.get( url, function() {
-	  window.open(url);  // this command triggers a pop-up and some browsers may block it
-    //alert( "success" );
+	  //window.open(url);   this command triggers a pop-up and some browsers may block it
+    alert( url );
 })
 
   .fail(function() {
