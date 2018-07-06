@@ -118,7 +118,7 @@ $sunday5 = $monday5 = $tuesday5 = $wednesday5 = $thursday5 = $friday5 = $saturda
 // (A) The data is in a CSV file; note that php does not recognize headers as special.
 // Order is important. Any change in the way the data is entered into the CSV file will cause this script to fail. However, dates and times do not need to be in chronological order because the file is sorted.
 
-$fileCSV = "../schedule/ChurchCalendar.csv"; // give the file a convenient new_month_name
+$fileCSV = "../schedule/ChurchCalendar.csv"; // give the file a convenient name
 $row = 0; // $row will increment as the lines in the file are read
 // arrays for processed data: $index is used for sorting, $date is date object, $each_day has time and event
 //$index = $date = $each_day = array("");
@@ -742,7 +742,7 @@ window.onclick = function(event) {
                       Choose a month <span class="glyphicon glyphicon-chevron-down" ></span>
                   </button><!-- end button -->
 
-                    <!-- Button 1's list -->
+                    <!-- Button 1's list; this is to make the name of the month appear on the button -->
                     <ul class="dropdown-menu" role="menu">
                         <li><button id="show_last_month" class="btnCalendar"><?php print_r($last_month_name) ?></button></li>
 						<li><button id="show_this_month" class="btnCalendar"><?php print_r($current_month_name) ?></button></li>

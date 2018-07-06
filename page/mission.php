@@ -13,8 +13,7 @@ Written by: Donald Nash <donaldnash1989@gmail.com>
 -->
 
 <h2>
-Mission <br />
-<?php echo "Today is " .date("l")  ?>
+Mission
 </h2>
 
 <div id="content" style="float:left;font-size:1.2em"></div>
