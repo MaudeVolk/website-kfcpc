@@ -179,7 +179,13 @@ first release: July 21, 2017
             <ul class="dropdown-menu" role="menu">
               <li><a class="replaceContent" name="reservation"><span class="glyphicon glyphicon-send"></span> Reserve a room/area</a></li>
               <li><a class="replaceContent" name="calendar"><span class="glyphicon glyphicon-calendar"></span> Calendar</a></li>
+
 			  <!--<li><a name="special_events" href="special_event_PDF/special_event.pdf" target = "_blank"><span class="glyphicon glyphicon-calendar"></span> Special Event </a></li>-->	  
+
+
+			  
+              
+
             </ul>
         </div> <!-- end Calendar button group -->
 
@@ -237,6 +243,7 @@ first release: July 21, 2017
             <li class="increaseBottom">10:45 AM</li>
             <li>Sunday School</li>
             <li class="increaseBottom">9:30 AM</li>
+
             <li><a class="replaceContent" style="color:white" name="publications">Cumberlander/Bulletin</a></li>
             <!--  <li><a style="color:white" href="images/easter.jpg">Easter Schedule</a></li> -->
 
