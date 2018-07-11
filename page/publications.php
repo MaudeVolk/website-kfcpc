@@ -11,7 +11,6 @@ Written with: HTML5, CSS3, php, Bootstrap, Javascript, JQuery, JQueryUI
 Written by: Donald Nash <donaldnash1989@gmail.com>, Maude Volk <maudevolk@gmail.com>
 
 Revised July 6, 2018 by: Maude Volk and Donna Walker <dmwalk.17@gmail.com> 
-
 -->
 
 <h2>Publications</h2>

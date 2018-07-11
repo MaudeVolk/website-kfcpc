@@ -136,6 +136,7 @@ color: black;
 	border-color: blue;
     padding: 10px;
     box-shadow: 5px 8px gray;
+<<<<<<< HEAD
 }
 
 .btnCalendar {
@@ -153,6 +154,9 @@ color: black;
 	border-color: blue;
     padding: 10px;
     box-shadow: 5px 8px gray;
+=======
+	
+>>>>>>> 3d556f4bacfa51cc7c38e6f743d49a648c468798
 }
 
 .content-section {
