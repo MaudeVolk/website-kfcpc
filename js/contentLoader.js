@@ -20,7 +20,7 @@ var textFile = this_js_script.attr('textFile');
 //read and load the text from the text file
 var lines = new Array();
     $.get('docs/'+textFile+'.txt', function(data){
-            lines = data.split('^p'); // so each time a ; appears a new paragraph happens
+            lines = data.split('^p'); // so each time a ^p appears a new paragraph happens
             $.each(lines, function( i, value ) {
               $('#content').append('<p>' + value + '</p>');
             });
