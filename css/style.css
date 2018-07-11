@@ -20,7 +20,7 @@ a {
 }
 
 hr {
-    border: 1px solid lightblue;
+    border: 2px solid blue;
 }
 
 hr#sidebar {
@@ -118,6 +118,41 @@ ul li .left-list {
 .btn {
     width: 100%;
     font-weight: bold;
+	
+}
+
+.btn2 {
+color: black;
+    /* padding: 15px 32px; */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5em;
+	background-color: white;
+    margin: 4px 2px;
+    cursor: pointer;
+	border-radius: 45% !important;
+	border: 2px solid;
+	border-color: blue;
+    padding: 10px;
+    box-shadow: 5px 8px gray;
+}
+
+.btnCalendar {
+color: black;
+    /* padding: 15px 32px; */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5em;
+	background-color: white;
+    margin: 4px 2px;
+    cursor: pointer;
+	border-radius: 10% !important;
+	border: 2px solid;
+	border-color: blue;
+    padding: 10px;
+    box-shadow: 5px 8px gray;
 }
 
 .content-section {

@@ -36,16 +36,6 @@ table td {
     min-height: 15em;
     padding-bottom:1em;
 }
- 
-.btnCalendar {
-    width:118%;
-	font-size:1.5em;
-	font-weight:bold;
-	align:left;
-	background-color:black;
-	color:white;
-	float:left;
-}	
 
 <!-- add -->
 .btn-group .button {

@@ -6,94 +6,182 @@ Content: Controls for selecting a publication
 
 Purpose: Selecting a specific publication from past services to view
 
-Written with: HTML5, CSS3, Bootstrap, Javascript, JQuery, JQueryUI
+Written with: HTML5, CSS3, php, Bootstrap, Javascript, JQuery, JQueryUI
 
 Written by: Donald Nash <donaldnash1989@gmail.com>, Maude Volk <maudevolk@gmail.com>
 
+Revised July 6, 2018 by: Maude Volk and Donna Walker <dmwalk.17@gmail.com> 
+
 -->
+
 <h2>Publications</h2>
+<!-- jQuery -->
+<script>
+    $(document).ready(function(){ // ready here is not showing any of the files
+		$("#start").show();
+        $("#bulletin").hide();
+		$("#newsletter").hide();
+		$("#special").hide();
+	});
 
-<p style="text-indent:0px">Choose from Sunday Worship, The Cumberlander,
-  and Special Services such as the SonRise Service. </p>
-<p style="text-indent:0px">  Begin by clicking on the desired publication type in the box below. </p>
-<br />
+	$("#show_bulletin").click(function(){
+		$("#start").hide();
+        $("#bulletin").show();
+		$("#newsletter").hide();
+		$("#special").hide();
+    });
+	$("#show_newsletter").click(function(){
+		$("#start").hide();
+        $("#bulletin").hide();
+		$("#newsletter").show();
+		$("#special").hide();
+    });
+	$("#show_special").click(function(){
+		$("#start").hide();
+        $("#bulletin").hide();
+		$("#newsletter").hide();
+		$("#special").show();
+    });
+
+</script>
+
+<h4 id='start'>Select Button to Show Items</h4>
+
+<button id="show_bulletin" class="btn2"> Sunday Bulletins</button>
+<button id="show_newsletter" class="btn2">Cumberlander Newsletters</button>
+<button id="show_special" class="btn2">Special Services</button>
+
+<?php 
+
+/*************************************** GET DATA ********************************************
+ We need 3 different arrays to store the 3 different types of publications
+ scandir is a php function that creates an array of all the files in a directory(folder)
+ and array_slice is a function that slices elements of an array
+************************************************************************************************/
+$dirBulletins = '../media/pdf/bulletin'; 		// name for files in the bulletin folder
+$bulletins = array_slice(scandir($dirBulletins), 2);	//drop the first two files (. and ..)
+
+$dirNewsletters = '../media/pdf/cumberlander';	// name for files in the cumberlander folder
+$newsletters = array_slice(scandir($dirNewsletters), 2);//drop the first two files (. and ..)
+
+$dirSpecial = '../media/pdf/special-services';	// name for files in the special-services folder
+$services = array_slice(scandir($dirSpecial), 2);		//drop the first two files (. and ..)
 
 
-<form id="pubsForm" class="form-horizontal" >
+/****************************  DISPLAY SUNDAY BULLETINS *****************************************/
+echo "<div id='bulletin'>";
+echo "<h3>Sunday Bulletins</h3>";
+echo "<h5>click to select</h5>";
+echo "<hr>";
+display_publication_dates($bulletins,$dirBulletins);
+echo "</div>"; //end div for bulletins
 
-<div id="controlSetZero" class="form-group" >
-<!--
-  <div class="col-lg-10 col-xs-12">
-    <label for="controlDropdown"></label>
-  </div>
-  -->
-  <!-- Drop down for publication type -->
-  <div class="col-lg-5 col-xs-12">
-    <p style="text-indent:0px">Select a publication type: </p>
-    <select class="form-control" id="controlDropdown" size="3" style="color:black;  font-size:1.2em">
-	  <!-- not using select because showing all 3 options-->
-      <!--<option value="">Select</option>-->
-      <option value="bulletin">Sunday Worship</option>
-      <option value="newsletter">The Cumberlander</option>
-      <option value="specialServicesDropdown">Special Services</option>
-    </select>
-	<p>Please disable pop-up blockers to fully access publications.</p>
-  </div>
-</div>
-<br />
+/**************************** DISPLAY CUMBERLANDER NEWSLETTERS ***********************************/
+echo "<div id='newsletter'>";
+echo "<h3>The Cumberlander</h3>";
+echo "<h5>click to select</h5>";
+echo "<hr>";
+display_publication_dates($newsletters,$dirNewsletters);
+echo "</div>"; //end newsletter
 
-<!-- This form is invisible until a publication that uses it is selected -->
-<div id="datepickerContainer" class="form-group control" hidden>
+/****************************** DISPLAY SPECIAL SERVICES ***********************************/
+echo "<div id='special'>";
+echo "<h3>Special Services</h3>";
+echo "<h5>click to select</h5>";
+echo "<hr>";
+display_titles($services,$dirSpecial);
+echo "</div>"; //end special
+
+/************************************************************************************************
+
+								FUNCTIONS
+
+**************************************************************************************************/
 
 
- <div class="col-lg-5 col-xs-12">
- 
-    <p style="text-indent:0px">Select the date: </p>
-
-    <input placeholder="click here to open calendar " 
-    class="form-control" type="text" id="datepicker">
+/*************************** DISPLAY PUBLICATION DATES ***********************************/
+function display_publication_dates($filenames,$path)
+{	
 	
-	<button class="btn btn-primary" id="openPub">
-      Open Publication
-    </button>
+$i = 0;
+	foreach($filenames as $filename) 
+	{
+		/*  the date is formatted as mmddyy - (1) retrieve it from the filename - (2)format it for the string to time function - (3) make it look nice - (4) store date object for sorting purposes*/
+		$date_string = substr($filename, -10, -4); //(1) get the date portion of the filename
+		$month = substr($date_string, 0, 2);// get the month substring
+	    $day = substr($date_string, 2, 2);// get the day substring
+		$year = substr($date_string, 4, 2);// get the year substring
+		$input_date = $month."/".$day."/".$year;// (2) input date is a string in a particular format
+		$date_object = strtotime($input_date);// turn the string into a date object
+		$output_date = date("F j, Y", $date_object);// (3) format the date
+		$index_date[$i] = $date_object;// (4) store date object in an array
+		$display_date[$i] = $output_date; //store the display date in an array
+		$lookup_name[$i] = $path.'/'.$filename; //store file name and location in an array
+		$i = $i + 1;
+	}
+	$count = $i; //total number of files
+	array_multisort ($index_date, SORT_DESC, $display_date, $lookup_name);	
+	
+	for ($j=0; $j<$count; $j++)
+	{
+		echo "<h4><a href='$lookup_name[$j]' target='_blank'>".$display_date[$j]."</a></h4>";
+	}
+}  
+ /*************************** DISPLAY SPECIAL SERVICES TITLES  ***********************************/
+function display_titles($filenames,$path)
+{
+	$i = 0;
 
- </div>
-  
-  
-  
-</div>
+	foreach($filenames as $filename)
+	{
+		$lookup_name[$i] = $path.'/'.$filename; //store path and filename in an array for later use
+		$length = strlen($filename) - 4; //length of the filename without the .pdf
+	    $service = substr($filename, 0, $length); //obtain filename without .pdf
+		
+		/* examine each part of the filename - we want to separate dated from undated titles */
+		$title_parts = explode(" ", $service); //separate each word in the filename
+		$num_parts = count($title_parts); //count the separate words in each filename
+		$last_index = $num_parts - 1; //find the index of the last word in the array $title_parts
+		$firstChar = substr($title_parts[$last_index], 0, 1); //obtain the first character of the last word in each filename
+		
+		/* the date is formatted mmddyy - if there is a date the 1st character of mm will be a 0 or 1 */
+		if ($firstChar == "0" || $firstChar == "1")
+		{
+			$date_string = substr($service, -6);//grabbing the date part
+			$month = substr($date_string, 0, 2);// get the month substring
+	        $day = substr($date_string, 2, 2);// get the day substring
+		    $year = substr($date_string, 4, 2);// get the year substring
+		    $input_date = $month."/".$day."/".$year;// (2) input date is a string in a particular format
+		    $date_object = strtotime($input_date);// turn the string into a date object
+		    $output_date = date("F j, Y", $date_object);// (3) format the date
+			$title = substr($service, 0, -6).$output_date;// replace date to display 
+			
+			/* index will be the value sorted on */
+			$index = $date_object;
+		}
+		
+		else
+		{
+			$title = $service;
+			
+			/* index will be the value sorted on, in this case nothing */
+			$index = "";
+		}
+		
+		$display_name[$i] = $title;
+		$file_index[$i] = $index;
+		
+		$i = $i + 1;
+	}
+	
+	array_multisort ($file_index, SORT_DESC, $display_name, $lookup_name);// this will sort all the dates first	
+	
+	$count = $i;// the total number of files in the folder
+	
+	for ($j=0; $j<$count; $j++)
+	{
+		echo "<h4><a href='$lookup_name[$j]' target='_blank'>".$display_name[$j]."</a></h4>";
+	}
+}
+?>	
 
-<div id="specialServicesDropdown" class="form-group control" hidden>
-    
-    <div class="col-lg-5 col-xs-12">
-	<p style="text-indent:0px">Select a year: </p>
-      <select id="controlTwo" class="form-control" size="2">
-        <!--<option value="">Select one</option>-->
-        <option value="this-year">Current Year</option>
-        <option value="last-year">Last Year</option>
-      </select>
-    </div>
-</div>
-
-<div id="this-year" class="control" hidden>
-  <p>Maundy Thursday: March 29, 2018</p>
-  <p>Good Friday Combined Service with Sacred Heart Cathedral 711 S. Northshore Drive: March 30, 2018</p>
-  <p>Easter: April 1, 2018</p>
-  <p>Candlelight Communion Service: December 24, 2018</p>
-</div>
-
-<div id="last-year" class="control" hidden>
-  <p><a href = "media/pdf/special-services/bulletin He Lives 040217.pdf" target = "_blank">He Lives! April 2, 2017</a></p>
-  <p><a href = "media/pdf/special-services/bulletin He Lives 040917.pdf" target = "_blank">He Lives! April 9, 2017</a></p>
-  <p><a href = "media/pdf/special-services/bulletin 041317.pdf" target = "_blank">Maundy Thursday, April 13, 2017</a></p>
-  <p><a href = "media/pdf/special-services/bulletin 041617SR.pdf" target = "_blank">Easter Sunrise Service</a></p>
-  <p><a href = "media/pdf/special-services/bulletin 041617.pdf" target = "_blank">Easter</a></p>
-</div>
-
-</form>
-
-<br />
-
-<script src="js/datepickerController.js"></script>
-<script src="js/controlManager.js"></script>
-<script src="js/events.js"></script>
