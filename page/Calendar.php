@@ -42,7 +42,7 @@ table td {
 	font-size:1.5em;
 	font-weight:bold;
 	align:left;
-	background-color:black;
+	background-color:blue;
 	color:white;
 	float:left;
 }	
@@ -51,8 +51,6 @@ table td {
 .btn-group .button {
 	float:left;
 }
-
-
 
  /* not using tooltip right now but may in the future */
 .tooltip {
