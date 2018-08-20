@@ -145,7 +145,7 @@ first release: July 21, 2017
 			    <ul class="dropdown-menu">
                           <li><a class="replaceContent" name="MusicProgram">Music</a></li>
                           <li><a class="replaceContent" name="SundaySchool">Sunday School</a></li>
-                          <li><a class="replaceContent" name="YouthGroup">Youth Group</a></li>
+                          <li><a class="replaceContent" name="youth">Youth Group</a></li>
                           <!--<li><a href="#">Dropdown Submenu 4.4</a></li>-->
                  </ul>
 				 
