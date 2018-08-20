@@ -130,7 +130,7 @@ first release: July 21, 2017
         <!-- About button group, "glyphicon glyphicon-chevron-down"- make the little dropdown arrow -->
         <div class="btn-group" id="nav-item"> 
           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> <!-- About button -->
-            About
+            About & Programs
 		    <span class="glyphicon glyphicon-chevron-down"></span>
           </button> <!-- end About button -->
 
@@ -140,11 +140,11 @@ first release: July 21, 2017
               <li><a class="replaceContent" name="mission"><span class="glyphicon glyphicon-ok"></span> Mission</a></li>
               <li><a class="replaceContent" name="about"><span class="glyphicon glyphicon-book"></span> Who we are</a></li>
               <li><a class="replaceContent" name="staff"><span class="glyphicon glyphicon-user"></span> Staff</a></li>
-			  <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user" ></span> Program</a>
+			  <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user" ></span> Programs</a>
 			  
 			    <ul class="dropdown-menu">
-                          <li><a class="replaceContent" name="MusicProgram">Music</a></li>
-                          <li><a class="replaceContent" name="SundaySchool">Sunday School</a></li>
+                          <li><a class="replaceContent" name="musicprogram">Music</a></li>
+                          <li><a class="replaceContent" name="sundayschool">Sunday School</a></li>
                           <li><a class="replaceContent" name="youth">Youth Group</a></li>
                           <!--<li><a href="#">Dropdown Submenu 4.4</a></li>-->
                  </ul>
