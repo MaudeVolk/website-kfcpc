@@ -36,13 +36,21 @@ table td {
     min-height: 15em;
     padding-bottom:1em;
 }
+ 
+.btnCalendar {
+    width:118%;
+	font-size:1.5em;
+	font-weight:bold;
+	align:left;
+	background-color:blue;
+	color:white;
+	float:left;
+}	
 
 <!-- add -->
 .btn-group .button {
 	float:left;
 }
-
-
 
  /* not using tooltip right now but may in the future */
 .tooltip {
@@ -79,6 +87,7 @@ table td {
 </style>
 
 <?php
+
 //*******************************************************************
 //****************** INITIALIZE VARIABLES ***************************
 //*******************************************************************
@@ -102,13 +111,14 @@ $sunday5 = $monday5 = $tuesday5 = $wednesday5 = $thursday5 = $friday5 = $saturda
 
 
 //*******************************************************************
-//      (A) GET THE DATA, (B) BUILD EVENTS ARRAY, & (C) SORT IT
+//     As eachh line in the CSV file is read
+//    (A) GET THE DATA AND (B) BUILD EVENTS ARRAY TO SORT LATER 
 //*******************************************************************
 
 // (A) The data is in a CSV file; note that php does not recognize headers as special.
 // Order is important. Any change in the way the data is entered into the CSV file will cause this script to fail. However, dates and times do not need to be in chronological order because the file is sorted.
 
-$fileCSV = "../schedule/ChurchCalendar.csv"; // give the file a convenient name
+$fileCSV = "../schedule/ChurchCalendar.csv"; // give the file a convenient new_month_name
 $row = 0; // $row will increment as the lines in the file are read
 // arrays for processed data: $index is used for sorting, $date is date object, $each_day has time and event
 //$index = $date = $each_day = array("");
@@ -141,7 +151,7 @@ if (($handle = fopen($fileCSV, "r")) != FALSE) {
         // Combine the date, time and event.
         $time_and_event = $date_only." ".$time_only." ".$data[0];
 
-    // Part B, arrayss
+    // Part B, build arrays
         // Build the index array for sorting. Remember to use the datetime ojbect!
         // If you use am, pm format it will place 6:30 pm before 8:00 am.
         array_push($index, $datetime_object);
@@ -160,7 +170,7 @@ if (($handle = fopen($fileCSV, "r")) != FALSE) {
 
 $maxlines = $row;
 
-// Part C, sort
+// ***** SORT THE ARRAYS BY DATE AND TIME 
 // Test the sorting by intentionally our of order dates, times, and events.
 //echo "before";
 //echo "<p>".$index[12]." ".$schedule[12]."</p>";
@@ -172,12 +182,113 @@ array_multisort ($index, $date, $schedule);
 //echo "<p>".$index[12]." ".$schedule[12]."</p>";
 //echo "<p>".$index[21]." ".$schedule[21]."</p>";
 
+//*****************************************************************
+//******************** MAIN PROGRAM *******************************
+//*****************************************************************
+// Enter the number corresponding to month where 0 is the current month, 1 next month, -1 last month.
+//print_r("<p>Here ".calendar_info("year-month","0 Month")." ".calendar_info("start-day","0 Month")." ".first_week("Sunday1", "0 Month")."</p>");
+//.calendar_info("month-name","0 Month").calendar_info("year","0 Month").calendar_info("start-day","0 Month").first_week("Sunday1", "0 Month");
+
+// Last month
+$month_last= month_table("-1 Month", $maxlines, $date, $schedule);
+
+// Current month
+$month_current = month_table("0 Month", $maxlines, $date, $schedule);
+
+// Next month
+$month_next = month_table("+1 Month", $maxlines, $date, $schedule);
+
+// Two months from now
+$month_plus2 = month_table("+2 Month", $maxlines, $date, $schedule);
+
+// Three months from now
+$month_plus3 = month_table("+3 Month", $maxlines, $date, $schedule);
+
+$last_month_name = calendar_info("month-name", "-1 Month").". ".calendar_info("year", "-1 Month");
+$current_month_name = calendar_info("month-name", "0 Month").". ".calendar_info("year", "0 Month");
+$next_month_name = calendar_info("month-name", "+1 Month").". ".calendar_info("year", "+1 Month");
+$month_plus2_name = calendar_info("month-name", "+2 Month").". ".calendar_info("year", "+2 Month");
+$month_plus3_name = calendar_info("month-name", "+3 Month").". ".calendar_info("year", "+3 Month");
+?>
+<!-- The following script displays different months depending on which button is clicked -->
+<script>
+$(document).ready(function(){
+    $("#last_month").hide();
+    $("#this_month").show();
+    $("#next_month").hide();
+    $("#month_plus2").hide();
+    $("#month_plus3").hide();
+    });
+$("#show_last_month").click(function(){
+    $("#last_month").show();
+    $("#this_month").hide();
+    $("#next_month").hide();
+    $("#month_plus2").hide();
+    $("#month_plus3").hide();
+});
+$("#show_this_month").click(function(){
+    $("#last_month").hide();
+    $("#this_month").show();
+    $("#next_month").hide();
+    $("#month_plus2").hide();
+    $("#month_plus3").hide();
+});
+$("#show_next_month").click(function(){
+    $("#last_month").hide();
+    $("#this_month").hide();
+    $("#next_month").show();
+    $("#month_plus2").hide();
+    $("#month_plus3").hide();
+});
+$("#show_month_plus2").click(function(){
+    $("#last_month").hide();
+    $("#this_month").hide();
+    $("#next_month").hide();
+    $("#month_plus2").show();
+    $("#month_plus3").hide();
+});
+$("#show_month_plus3").click(function(){
+    $("#last_month").hide();
+    $("#this_month").hide();
+    $("#next_month").hide();
+    $("#month_plus2").hide();
+    $("#month_plus3").show();
+});
+</script>
+
+              <!-- Button 1, "glyphicon glyphicon-chevron-down"- make the little dropdown arrow removed id="nav-item" in btn-group-->
+                <div class="btn-group" >
+				  
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="font-size:1.4em; float:left; color:white; margin-bottom:1em">
+				  
+                      Choose a month <span class="glyphicon glyphicon-chevron-down" ></span>
+                  </button><!-- end button -->
+
+                    <!-- Button 1's list -->
+                    <ul class="dropdown-menu" role="menu">
+                        <li><button id="show_last_month" class="btnCalendar"><?php print_r($last_month_name) ?></button></li>
+						<li><button id="show_this_month" class="btnCalendar"><?php print_r($current_month_name) ?></button></li>
+                        <li><button id="show_next_month" class="btnCalendar"><?php print_r($next_month_name) ?></button></li>
+                        <li><button id="show_month_plus2" class="btnCalendar"><?php print_r($month_plus2_name) ?></button></li>
+						<li><button id="show_month_plus3" class="btnCalendar"><?php print_r($month_plus3_name) ?></button></li>
+                    </ul>
+                </div><!-- end button 1 group -->
+
+<!-- tables for last month, this month, next month -->
+<!-- Each button id works with its #id in the script above -->
+<div id="last_month"><?php print_r($month_last)?></div>
+<div id="this_month"><?php print_r($month_current)?></div>
+<div id="next_month"><?php print_r($month_next)?></div>
+<div id="month_plus2"><?php print_r($month_plus2)?></div>
+<div id="month_plus3"><?php print_r($month_plus3)?></div>				
+
+<?php
 //************************************************************************************************
 //***************************************** FUNCTIONS ********************************************
 // (I) calendar_info, (II) first_week, (III) following_weeks, (IV) day_schedule, (V) month_table 
 //************************************************************************************************
 
-// ***********(I) function to gather facts about the month *******************
+// (I) calendar_info, a function to gather facts about the month *******************
 
 // The function calendar_info takes two strings:(1) as seen in the "if" statements
 // and (2) $month_shift has to be in the form of "0 Month" for the current month,
@@ -220,7 +331,7 @@ function calendar_info($date_data, $month_shift){
 
 } // end function calendar_info
 
-//************************************** (II) first_week **************************************************************
+// (II) first_week **********************************************
 // Function first_week adjusts the dates for the first week of the month; $number is the numerical representation of month.
 function first_week($day_of_week, $month_shift, $maxlines, $date, $schedule){
     $year_month = calendar_info("year-month", $month_shift);
@@ -394,7 +505,7 @@ function first_week($day_of_week, $month_shift, $maxlines, $date, $schedule){
     return $this_day;
     } // end function first_week
 	
-//****************************** (III) following_weeks ********************************************
+// (III) following_weeks ********************************************
 
 // $month_shift has the format "0 Month" where the number represents month(s) before, current month, or month(s) ahead
 function following_weeks($day_of_week, $month_shift, $maxlines, $date, $schedule){
@@ -531,7 +642,7 @@ function following_weeks($day_of_week, $month_shift, $maxlines, $date, $schedule
 
 } // end function following_weeks
 
-//********************************** (IV) day_schedule ********************************************
+// (IV) day_schedule ********************************************
 function day_schedule($particular_date, $maxlines, $date, $schedule){
   $activity = "";
   // $line is the line number in the CSV file
@@ -552,7 +663,7 @@ function day_schedule($particular_date, $maxlines, $date, $schedule){
   return $activity;
 } // end function day_schedule
 
-//******************************* (V) month_table *****************************************************
+// (V) month_table *****************************************************
 // The variable $number is the month in numerical form, $name is the month in its 3-letter abbreviation.
 // The function month_table returns a table for the desired month.
   function month_table($month_shift, $maxlines, $date, $schedule){
@@ -622,139 +733,4 @@ function day_schedule($particular_date, $maxlines, $date, $schedule){
     </table>";
     return $print_this;
   }
-
-//*****************************************************************
-//******************** MAIN PROGRAM *******************************
-//*****************************************************************
-// Enter the number corresponding to month where 0 is the current month, 1 next month, -1 last month.
-//print_r("<p>Here ".calendar_info("year-month","0 Month")." ".calendar_info("start-day","0 Month")." ".first_week("Sunday1", "0 Month")."</p>");
-//.calendar_info("month-name","0 Month").calendar_info("year","0 Month").calendar_info("start-day","0 Month").first_week("Sunday1", "0 Month");
-// Last month
-$month_last= month_table("-1 Month", $maxlines, $date, $schedule);
-
-// Current month
-$month_current = month_table("0 Month", $maxlines, $date, $schedule);
-
-// Next month
-$month_next = month_table("+1 Month", $maxlines, $date, $schedule);
-
-// Two months from now
-$month_plus2 = month_table("+2 Month", $maxlines, $date, $schedule);
-
-// Three months from now
-$month_plus3 = month_table("+3 Month", $maxlines, $date, $schedule);
-
-$last_month_name = calendar_info("month-name", "-1 Month").". ".calendar_info("year", "-1 Month");
-$current_month_name = calendar_info("month-name", "0 Month").". ".calendar_info("year", "0 Month");
-$next_month_name = calendar_info("month-name", "+1 Month").". ".calendar_info("year", "+1 Month");
-$month_plus2_name = calendar_info("month-name", "+2 Month").". ".calendar_info("year", "+2 Month");
-$month_plus3_name = calendar_info("month-name", "+3 Month").". ".calendar_info("year", "+3 Month");
-?>
-
-<!-- The following script displays different months depending on which button is clicked -->
-<script>
-$(document).ready(function(){
-    $("#last_month").hide();
-    $("#this_month").show();
-    $("#next_month").hide();
-    $("#month_plus2").hide();
-    $("#month_plus3").hide();
-    });
-$("#show_last_month").click(function(){
-    $("#last_month").show();
-    $("#this_month").hide();
-    $("#next_month").hide();
-    $("#month_plus2").hide();
-    $("#month_plus3").hide();
-});
-$("#show_this_month").click(function(){
-    $("#last_month").hide();
-    $("#this_month").show();
-    $("#next_month").hide();
-    $("#month_plus2").hide();
-    $("#month_plus3").hide();
-});
-$("#show_next_month").click(function(){
-    $("#last_month").hide();
-    $("#this_month").hide();
-    $("#next_month").show();
-    $("#month_plus2").hide();
-    $("#month_plus3").hide();
-});
-$("#show_month_plus2").click(function(){
-    $("#last_month").hide();
-    $("#this_month").hide();
-    $("#next_month").hide();
-    $("#month_plus2").show();
-    $("#month_plus3").hide();
-});
-$("#show_month_plus3").click(function(){
-    $("#last_month").hide();
-    $("#this_month").hide();
-    $("#next_month").hide();
-    $("#month_plus2").hide();
-    $("#month_plus3").show();
-});
-</script>
-
-
-
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content 
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-
-*/
-</script>
-
-                <!-- Button 1, "glyphicon glyphicon-chevron-down"- make the little dropdown arrow removed id="nav-item" in btn-group-->
-                <div class="btn-group" >
-				  
-                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="font-size:1.4em; float:left; color:white; margin-bottom:1em">
-				  
-                      Choose a month <span class="glyphicon glyphicon-chevron-down" ></span>
-                  </button><!-- end button -->
-
-                    <!-- Button 1's list; this is to make the name of the month appear on the button -->
-                    <ul class="dropdown-menu" role="menu">
-                        <li><button id="show_last_month" class="btnCalendar"><?php print_r($last_month_name) ?></button></li>
-						<li><button id="show_this_month" class="btnCalendar"><?php print_r($current_month_name) ?></button></li>
-                        <li><button id="show_next_month" class="btnCalendar"><?php print_r($next_month_name) ?></button></li>
-                        <li><button id="show_month_plus2" class="btnCalendar"><?php print_r($month_plus2_name) ?></button></li>
-						<li><button id="show_month_plus3" class="btnCalendar"><?php print_r($month_plus3_name) ?></button></li>
-                    </ul>
-                </div><!-- end button 1 group -->
-
-<!-- put the buttons in a dropdown list
-<h3>
-  <button id="show_last_month"><?php print_r($last_month_name) ?></button>
-  <button id="show_this_month"><?php print_r($current_month_name) ?></button>
-  <button id="show_next_month"><?php print_r($next_month_name) ?></button>
-  <button id="show_month_plus2"><?php print_r($month_plus2_name) ?></button>
-  <button id="show_month_plus3"><?php print_r($month_plus3_name) ?></button>
-</h3>
--->
-<!-- tables for last month, this month, next month -->
-<!-- Each button id works with its #id in the script above -->
-<div id="last_month"><?php print_r($month_last)?></div>
-<div id="this_month"><?php print_r($month_current)?></div>
-<div id="next_month"><?php print_r($month_next)?></div>
-<div id="month_plus2"><?php print_r($month_plus2)?></div>
-<div id="month_plus3"><?php print_r($month_plus3)?></div>
+?>               
