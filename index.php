@@ -29,7 +29,7 @@ first release: July 21, 2017
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Demo site for Knoxville First Cumberland Presbyterian Church">
 	<meta name="keywords" content="Church, Presbyterian, Cumberland, Christian School, Jazzercise, Knoxville, Service, Rocky Hill, West Town Mall, Fellowship">
@@ -198,7 +198,7 @@ first release: July 21, 2017
               <li><a href="http://www.cumberland.org/center/CPC_Home_Page/Home.html" target="_blank">Cumberland Presbyterian Denomination</a></li>
 			  <li><a href="https://www.camcabincrafts.com/" target="_blank">CAM Cabin Crafts</a></li>
               <li><a href="http://cpcmc.org/evotions/" target="_blank">eVotions</a></li>
-			  <li><a href="http://jcls.jazzercise.com/facility/jazzercise-knoxville-first-cumberland-presbyterian-church" target="_blank">Jazzercise</a></li>
+			  <li><a href="http://jcls.jazzercise.com/facility/jazzercise-knoxville-first-cumberland-presbyterian-church" target="_blank">Jazzercise</a></i>
               <li><a href="http://www.pack20knoxville.scoutlander.com/publicsite/unithome.aspx?UID=19373" target="_blank">Cub Scouts</a></li>
               <li><a href="http://troop20knoxville.scoutlander.com/publicsite/unithome.aspx?UID=23394" target="_blank">Boy Scouts</a></li>
             </ul>
@@ -236,22 +236,28 @@ first release: July 21, 2017
             <li>Sunday Service</li>
             <li class="increaseBottom">10:45 AM</li>
             <li>Sunday School</li>
+
             <li class="increaseBottom">9:30 AM</li>
             <li><a class="replaceContent" style="color:white" name="publications">Cumberlander/Bulletin</a></li>
             <!--  <li><a style="color:white" href="images/easter.jpg">Easter Schedule</a></li> -->
 
+
+            <li>9:30 AM</li>
+			<li><br/></li>
+			<!--
+			<li>Christmas Cantata</li>
+            <li>Dec. 17 at 6:00 PM</li>
+			<li><br/></li>
+			<li>Christmas Eve Service</li>
+            <li>10:00 AM</li>
+			<li><br/></li>
+			<li>Christmas Eve Candlelight Service</li>
+            <li>5:00 PM</li>
+			-->
+
           </ul>
 		  
         </div><!-- end sidebar content -->
-          <footer>
-              <a class="replaceContent social-link" name="contact">Contact</a> |
-              <a href="https://www.facebook.com/Knoxville-First-Cumberland-Presbyterian-Church-219987585273/" class="social-link" target="_blank"><img src="images/logo/facebook-icon-preview-1-400x400.png" class="social-link-img"/></a> |
-              <a class="replaceContent social-link" name="map">Map</a> |
-              <a href="#" class="social-link">Give</a>
-              <!-- count.php is a counter and count_file.txt holds the number for count.php to access -->
-              <p style="color:blue"><?php include "count.php" ?> visitors</p>
-              <!-- Close the footer for the page -->
-          </footer>
       </div><!-- end Column 1 of row 3 -->
 
       <!-- Column 2 of row 3 -->
@@ -261,7 +267,15 @@ first release: July 21, 2017
     </div><!-- end row 3 -->
 
     <!-- Row 4, footer -->
-
+    <footer>
+            <a class="replaceContent social-link" name="contact">Contact</a> |
+            <a href="https://www.facebook.com/Knoxville-First-Cumberland-Presbyterian-Church-219987585273/" class="social-link" target="_blank"><img src="images/logo/facebook-icon-preview-1-400x400.png" class="social-link-img"/></a> |
+            <a class="replaceContent social-link" name="map">Map</a> |
+            <a href="#" class="social-link">Give</a>
+			<!-- count.php is a counter and count_file.txt holds the number for count.php to access -->
+            <p style="color:blue"><?php include "count.php" ?> visitors</p>
+            <!-- Close the footer for the page -->
+   </footer>
    
 </div><!-- close container-->
 

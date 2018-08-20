@@ -24,7 +24,7 @@
   
     <div class="col-xs-0 col-sm-0 col-md-0 col-lg-3">
 	  <div class="person">
-	    <img id="portrait"  src="images/people/Tom_Witmer_portrait.jpg" />
+	    <img id="portrait"  class="img-thumbnail" src="images/people/Tom_Witmer_portrait.jpg" />
       </div><!-- close person -->
 	</div><!-- end column 1 of row 2-->
 	
@@ -45,7 +45,7 @@
   
     <div class="col-xs-0 col-sm-0 col-md-0 col-lg-3">
 	  <div class="person">
-	    <img id="portrait"  src="images/people/Ware_KarenSam.jpg" />
+	    <img id="portrait"  class="img-thumbnail" src="images/people/Ware_KarenSam.jpg" />
       </div><!-- close person -->
 	</div><!-- end column 1 of row 3-->
 	
