@@ -111,8 +111,10 @@ $sunday5 = $monday5 = $tuesday5 = $wednesday5 = $thursday5 = $friday5 = $saturda
 
 
 //*******************************************************************
+
 //     As eachh line in the CSV file is read
 //    (A) GET THE DATA AND (B) BUILD EVENTS ARRAY TO SORT LATER 
+
 //*******************************************************************
 
 // (A) The data is in a CSV file; note that php does not recognize headers as special.
@@ -151,7 +153,9 @@ if (($handle = fopen($fileCSV, "r")) != FALSE) {
         // Combine the date, time and event.
         $time_and_event = $date_only." ".$time_only." ".$data[0];
 
+
     // Part B, build arrays
+
         // Build the index array for sorting. Remember to use the datetime ojbect!
         // If you use am, pm format it will place 6:30 pm before 8:00 am.
         array_push($index, $datetime_object);
@@ -171,6 +175,7 @@ if (($handle = fopen($fileCSV, "r")) != FALSE) {
 $maxlines = $row;
 
 // ***** SORT THE ARRAYS BY DATE AND TIME 
+
 // Test the sorting by intentionally our of order dates, times, and events.
 //echo "before";
 //echo "<p>".$index[12]." ".$schedule[12]."</p>";
@@ -283,6 +288,7 @@ $("#show_month_plus3").click(function(){
 <div id="month_plus3"><?php print_r($month_plus3)?></div>				
 
 <?php
+
 //************************************************************************************************
 //***************************************** FUNCTIONS ********************************************
 // (I) calendar_info, (II) first_week, (III) following_weeks, (IV) day_schedule, (V) month_table 
@@ -331,7 +337,9 @@ function calendar_info($date_data, $month_shift){
 
 } // end function calendar_info
 
+
 // (II) first_week **********************************************
+
 // Function first_week adjusts the dates for the first week of the month; $number is the numerical representation of month.
 function first_week($day_of_week, $month_shift, $maxlines, $date, $schedule){
     $year_month = calendar_info("year-month", $month_shift);
@@ -505,6 +513,7 @@ function first_week($day_of_week, $month_shift, $maxlines, $date, $schedule){
     return $this_day;
     } // end function first_week
 	
+
 // (III) following_weeks ********************************************
 
 // $month_shift has the format "0 Month" where the number represents month(s) before, current month, or month(s) ahead
@@ -643,6 +652,7 @@ function following_weeks($day_of_week, $month_shift, $maxlines, $date, $schedule
 } // end function following_weeks
 
 // (IV) day_schedule ********************************************
+
 function day_schedule($particular_date, $maxlines, $date, $schedule){
   $activity = "";
   // $line is the line number in the CSV file
@@ -664,6 +674,7 @@ function day_schedule($particular_date, $maxlines, $date, $schedule){
 } // end function day_schedule
 
 // (V) month_table *****************************************************
+
 // The variable $number is the month in numerical form, $name is the month in its 3-letter abbreviation.
 // The function month_table returns a table for the desired month.
   function month_table($month_shift, $maxlines, $date, $schedule){
