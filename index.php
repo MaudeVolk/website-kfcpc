@@ -58,6 +58,10 @@ first release: July 21, 2017
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 	<style>
+	a:focus, a:active
+	{
+		color:red;
+	}
 	.dropdown-submenu{ position: relative; }
 
 .dropdown-submenu>.dropdown-menu{
@@ -129,10 +133,16 @@ first release: July 21, 2017
 
         <!-- About button group, "glyphicon glyphicon-chevron-down"- make the little dropdown arrow -->
         <div class="btn-group" id="nav-item"> 
-          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> <!-- About button -->
+          <button type="button" onclick="getfocus()"value="About & Programs" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" > <!-- About button -->
             About & Programs
 		    <span class="glyphicon glyphicon-chevron-down"></span>
           </button> <!-- end About button -->
+		  <script>
+		    function getfocus()
+			{
+				document.getElemtnyById("myanchor").focus();
+			}
+		  </script>
 
             <!-- About button's list -->
 			
@@ -184,7 +194,7 @@ first release: July 21, 2017
         </div> <!-- end Calendar button group -->
 
         <!-- Connections button group -->
-        <div class="btn-group" id="nav-item">
+        <div class="btn-group" id="nav-item">	
           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
             Connections <span class="glyphicon glyphicon-chevron-down"></span>
           </button><!-- end Connections button -->
@@ -230,15 +240,17 @@ first release: July 21, 2017
       <div class="col-lg-2 col-md-3 col-sm-3 sidebar-plain-service">
 	  
         <h3 class="increaseTop">Services</h3>
+		<!-- took out class="increaseBottom" to make special event fit -->
         <div class="sidebar-content">
 		
           <ul>
-            <li>Sunday Service</li>
-            <li class="increaseBottom">10:45 AM</li>
-            <li>Sunday School</li>
+            <li >Sunday Service</li>
+            <li >10:45 AM</li>
+            <li >Sunday School</li>
             <li class="increaseBottom">9:30 AM</li>
-            <li><a class="replaceContent" style="color:white" name="publications">Cumberlander/Bulletin</a></li>
-            <!--  <li><a style="color:white" href="images/easter.jpg">Easter Schedule</a></li> -->
+            
+              <li class="increaseBottom"><a style="color:white" href="special_event_PDF/special_event.pdf" target="_blank">Ice Cream Social and Mission Report</a></li>			  
+			<li ><a class="replaceContent" style="color:white" name="publications">Cumberlander/Bulletin</a></li>
 
           </ul>
 		  
