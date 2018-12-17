@@ -115,8 +115,10 @@ ul li .left-list {
 
 .dropdown-menu li a:hover {
     /*background-color: lightblue;*/
-	background-color: red;
+	background-color: #cccccc;   /*was pale bule*/
     background-image: none;
+	color:white;
+	font-weight:bold;
 }
 
 .btn {

@@ -28,18 +28,36 @@ Revised July 6, 2018 by: Maude Volk and Donna Walker <dmwalk.17@gmail.com>
         $("#bulletin").show();
 		$("#newsletter").hide();
 		$("#special").hide();
+		$("#show_bulletin").css("background-color","#e6e6ff");
+		$("#show_bulletin").css("font-weight","bold");
+		$("#show_newsletter").css("background-color","white");
+		$("#show_newsletter").css("font-weight","normal");
+		$("#show_special").css("background-color","white");
+		$("#show_special").css("font-weight","normal");
     });
 	$("#show_newsletter").click(function(){
 		$("#start").hide();
         $("#bulletin").hide();
 		$("#newsletter").show();
 		$("#special").hide();
+		$("#show_bulletin").css("background-color","white");
+		$("#show_bulletin").css("font-weight","normal");
+		$("#show_newsletter").css("background-color","#e6e6ff");
+		$("#show_newsletter").css("font-weight","bold");
+		$("#show_special").css("background-color","white");
+		$("#show_special").css("font-weight","normal");
     });
 	$("#show_special").click(function(){
 		$("#start").hide();
         $("#bulletin").hide();
 		$("#newsletter").hide();
 		$("#special").show();
+		$("#show_bulletin").css("background-color","white");
+		$("#show_bulletin").css("font-weight","normal");
+		$("#show_newsletter").css("background-color","white");
+		$("#show_newsletter").css("font-weight","normal");
+		$("#show_special").css("background-color","#e6e6ff");
+		$("#show_special").css("font-weight","bold");
     });
 
 </script>

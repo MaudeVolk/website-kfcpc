@@ -71,7 +71,7 @@ table td {
     border-radius: 10px !important;
     padding: 1em;
 
-	 Position the tooltip
+	 Position the tooltip 
     position: absolute;
 
     z-index: 1;

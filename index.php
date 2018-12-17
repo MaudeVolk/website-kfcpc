@@ -29,10 +29,10 @@ first release: July 21, 2017
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Demo site for Knoxville First Cumberland Presbyterian Church">
-	<meta name="keywords" content="Church, Presbyterian, Cumberland, Christian School, Jazzercise, Knoxville, Service, Rocky Hill, West Town Mall, Fellowship">
+    <meta name="description" content="Knoxville First Cumberland Presbyterian Church">
+	<meta name="keywords" content="Church, Presbyterian, Cumberland, Christian School, Jazzercise, Knoxville, Service, Rocky Hill, West Town Mall, Fellowship, Christmas Play Dec. 16, Christmas Eve Candlelight Service">
     <meta name="author" content="Donald Nash and Maude Volk and Donna Walker">
     <meta http-equiv="cache-control" content="max-age=0" />
     <meta http-equiv="cache-control" content="no-cache" />
@@ -57,12 +57,8 @@ first release: July 21, 2017
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-	<style>
-	a:focus, a:active
-	{
-		color:red;
-	}
-	.dropdown-submenu{ position: relative; }
+	<style>	
+.dropdown-submenu{ position: relative; }
 
 .dropdown-submenu>.dropdown-menu{
   top:0;
@@ -125,15 +121,15 @@ first release: July 21, 2017
       <div class="btn-group" id="nav-bar">
 
         <div class="btn-group" id="nav-item"> <!-- Home button -->
-          <button type="button" class="btn btn-primary replaceContent" name="home">
-            <span class="glyphicon glyphicon-home"></span> 
+          <button id="home" type="button" class="btn btn-primary replaceContent" name="home">
+            <span class="glyphicon glyphicon-home" ></span> 
 			  Home
           </button>
         </div> <!-- end Home button -->
 
         <!-- About button group, "glyphicon glyphicon-chevron-down"- make the little dropdown arrow -->
         <div class="btn-group" id="nav-item"> 
-          <button type="button" onclick="getfocus()"value="About & Programs" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" > <!-- About button -->
+          <button id="about" type="button" onclick="getfocus()" value="About & Programs" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> <!-- About button -->
             About & Programs
 		    <span class="glyphicon glyphicon-chevron-down"></span>
           </button> <!-- end About button -->
@@ -147,6 +143,7 @@ first release: July 21, 2017
             <!-- About button's list -->
 			
             <ul class="dropdown-menu" role="menu">
+			<li><a class="replaceContent" name="test"><span class="glyphicon glyphicon-ok"></span> Test</a></li>
               <li><a class="replaceContent" name="mission"><span class="glyphicon glyphicon-ok"></span> Mission</a></li>
               <li><a class="replaceContent" name="about"><span class="glyphicon glyphicon-book"></span> Who we are</a></li>
               <li><a class="replaceContent" name="staff"><span class="glyphicon glyphicon-user"></span> Staff</a></li>
@@ -164,8 +161,10 @@ first release: July 21, 2017
         </div><!-- end About button group -->
 
         <!-- Media & Publications button group -->
+
         <div class="btn-group" id="nav-item">
-          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> <!-- Media & Publications button -->
+          <button id="pubs" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> <!-- Media & Publications button -->
+
             Media & Publications <span class="glyphicon glyphicon-chevron-down"></span>
           </button> <!-- end Media & Publications button -->
 
@@ -181,7 +180,7 @@ first release: July 21, 2017
 
         <!-- Calendar button group -->
         <div class="btn-group" id="nav-item">
-          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><!-- Calendar button -->
+          <button id="calendar" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><!-- Calendar button -->
                 Calendar <span class="glyphicon glyphicon-chevron-down"></span>
           </button><!-- end Calendar button -->
 
@@ -195,22 +194,26 @@ first release: July 21, 2017
 
         <!-- Connections button group -->
         <div class="btn-group" id="nav-item">	
-          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          <button id="connect" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
             Connections <span class="glyphicon glyphicon-chevron-down"></span>
           </button><!-- end Connections button -->
 
           <!-- Connections button's list -->
             <ul class="dropdown-menu" role="menu">
-              <li><a href="http://cumberlandchristianacad.org/" target="_blank">Cumberland Christian Academy</a></li>
-              <li><a href="https://www.classicalconversations.com/" target="_blank">Classical Conversations</a></li>
-			  <li><a href="http://www.thursdayconnection.org/" target="_blank">Thursday Connection</a></li>
-              <li><a href="http://www.petn.org/" target="_blank">Presbytery of East Tennessee</a></li>
-              <li><a href="http://www.cumberland.org/center/CPC_Home_Page/Home.html" target="_blank">Cumberland Presbyterian Denomination</a></li>
-			  <li><a href="https://www.camcabincrafts.com/" target="_blank">CAM Cabin Crafts</a></li>
-              <li><a href="http://cpcmc.org/evotions/" target="_blank">eVotions</a></li>
-			  <li><a href="http://jcls.jazzercise.com/facility/jazzercise-knoxville-first-cumberland-presbyterian-church" target="_blank">Jazzercise</a></i>
-              <li><a href="http://www.pack20knoxville.scoutlander.com/publicsite/unithome.aspx?UID=19373" target="_blank">Cub Scouts</a></li>
-              <li><a href="http://troop20knoxville.scoutlander.com/publicsite/unithome.aspx?UID=23394" target="_blank">Boy Scouts</a></li>
+			  <li style="padding-left: .25em"><a href="http://www.cumberland.org/center/CPC_Home_Page/Home.html" target="_blank">Cumberland Presbyterian Denomination</a></li>
+			  <li style="padding-left: .25em"><a href="http://www.petn.org/" target="_blank">Presbytery of East Tennessee</a></li>
+			  <li style="padding-left: .25em"><a href="http://cpcmc.org/evotions/" target="_blank">eVotions</a></li>
+			  <li style="padding-left: .25em"><a href="https://www.camcabincrafts.com/" target="_blank">CAM Cabin Crafts</a></li>
+			  
+              <li style="padding-left: .25em"><a href="http://cumberlandchristianacad.org/" target="_blank">Cumberland Christian Academy</a></li>
+              <li style="padding-left: .25em"><a href="https://www.classicalconversations.com/" target="_blank">Classical Conversations</a></li>
+			  <li style="padding-left: .25em"><a href="http://www.thursdayconnection.org/" target="_blank">Thursday Connection</a></li>
+			  <li style="padding-left: .25em"><a href="http://tmweb.troopmaster.com/Website/Home" target="_blank">Boy Scout Troop 20</a></li>
+			  <li style="padding-left: .25em">&nbsp;&nbsp;&nbsp;&nbsp; Scouting for Girls Troop 21</li>
+			  <li style="padding-left: .25em"><a href="http://www.pack20knoxville.scoutlander.com/publicsite/unithome.aspx?UID=19373" target="_blank">Cub Scouts Pack 20</a></li>
+			  <li style="padding-left: .25em">&nbsp;&nbsp;&nbsp;&nbsp; Girl Scouts of America Troop 20370</li>
+ 
+			  <li><a href="http://jcls.jazzercise.com/facility/jazzercise-knoxville-first-cumberland-presbyterian-church" target="_blank">Jazzercise</a></li>                  
             </ul>
          </div><!-- end Connections button group -->
 
@@ -218,7 +221,7 @@ first release: July 21, 2017
 		 <!--
 		 -->
          <div class="btn-group" id="nav-item">
-           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><!-- Support Us button -->
+           <button id="support" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><!-- Support Us button -->
              Support Us <span class="glyphicon glyphicon-chevron-down"></span>
            </button><!-- end Support Us button -->
 
@@ -230,7 +233,7 @@ first release: July 21, 2017
          </div><!-- end Support Us button group -->
                 
       </div><!-- end nav-bar button groups -->
-    
+	  
     </div><!-- end row 2-->
 
     <!-- Row 3, sidebar and main content -->
@@ -244,38 +247,31 @@ first release: July 21, 2017
         <div class="sidebar-content">
 		
           <ul>
-<<<<<<< HEAD
             <li >Sunday Service</li>
             <li >10:45 AM</li>
             <li >Sunday School</li>
-=======
-            <li>Sunday Service</li>
-            <li class="increaseBottom">10:45 AM</li>
-            <li>Sunday School</li>
-
->>>>>>> 94b08bebb2254c4f0d3b0a63bcac716a73e74ac5
             <li class="increaseBottom">9:30 AM</li>
-            
-              <li class="increaseBottom"><a style="color:white" href="special_event_PDF/special_event.pdf" target="_blank">Ice Cream Social and Mission Report</a></li>			  
-			<li ><a class="replaceContent" style="color:white" name="publications">Cumberlander/Bulletin</a></li>
-
-
-            <li>9:30 AM</li>
-			<li><br/></li>
-			<!--
-			<li>Christmas Cantata</li>
-            <li>Dec. 17 at 6:00 PM</li>
-			<li><br/></li>
-			<li>Christmas Eve Service</li>
-            <li>10:00 AM</li>
-			<li><br/></li>
-			<li>Christmas Eve Candlelight Service</li>
-            <li>5:00 PM</li>
-			-->
-
+			<li>Christmas Musical<br/>Sunday, December 16th <br/> 10:45 AM<br/></li>
+			<li><hr style="border: 1px solid grey;"></li>
+			<li>Candlelight Service<br/>Communion<br/>Monday, December 23rd<br/>5:00 PM</li>
+			<br/>
+			
+			<!-- this anchor has its very own id so that only publications tab is "clicked" when the link on the homepage is clicked -->
+			<li ><a id="homepubs" class="replaceContent" style="color:white" name="publications">Cumberlander/Bulletin</a></li>
+			
+            		  
           </ul>
 		  
         </div><!-- end sidebar content -->
+          <footer>
+              <a class="replaceContent social-link" name="contact">Contact</a> |
+              <a href="https://www.facebook.com/Knoxville-First-Cumberland-Presbyterian-Church-219987585273/" class="social-link" target="_blank"><img src="images/logo/facebook-icon-preview-1-400x400.png" class="social-link-img"/></a> |
+              <a class="replaceContent social-link" name="map">Map</a> |
+              <a href="#" class="social-link">Give</a>
+              <!-- count.php is a counter and count_file.txt holds the number for count.php to access -->
+              <p style="color:blue"><?php include "count.php" ?> visitors</p>
+              <!-- Close the footer for the page -->
+          </footer>
       </div><!-- end Column 1 of row 3 -->
 
       <!-- Column 2 of row 3 -->
@@ -285,15 +281,59 @@ first release: July 21, 2017
     </div><!-- end row 3 -->
 
     <!-- Row 4, footer -->
-    <footer>
-            <a class="replaceContent social-link" name="contact">Contact</a> |
-            <a href="https://www.facebook.com/Knoxville-First-Cumberland-Presbyterian-Church-219987585273/" class="social-link" target="_blank"><img src="images/logo/facebook-icon-preview-1-400x400.png" class="social-link-img"/></a> |
-            <a class="replaceContent social-link" name="map">Map</a> |
-            <a href="#" class="social-link">Give</a>
-			<!-- count.php is a counter and count_file.txt holds the number for count.php to access -->
-            <p style="color:blue"><?php include "count.php" ?> visitors</p>
-            <!-- Close the footer for the page -->
-   </footer>
+	
+<!-- The jQuery script below highlights the current tab in red --> 
+<script>
+$("#home").click(function(){
+	$("#home").css("background-color","grey");
+	$("#about").css("background-color","");
+	$("#pubs").css("background-color","");
+	$("#calendar").css("background-color","");
+	$("#connect").css("background-color","");
+	$("#support").css("background-color","");
+});
+$("#about").click(function(){
+	$("#home").css("background-color","");
+	$("#about").css("background-color","grey");
+	$("#pubs").css("background-color","");
+	$("#calendar").css("background-color","");
+	$("#connect").css("background-color","");
+	$("#support").css("background-color","");
+});
+$("#pubs").click(function(){
+	$("#home").css("background-color","");
+	$("#about").css("background-color","");
+	$("#pubs").css("background-color","grey");
+	$("#calendar").css("background-color","");
+	$("#connect").css("background-color","");
+	$("#support").css("background-color","");
+});
+$("#calendar").click(function(){
+	$("#home").css("background-color","");
+	$("#about").css("background-color","");
+	$("#pubs").css("background-color","");
+	$("#calendar").css("background-color","grey");
+	$("#connect").css("background-color","");
+	$("#support").css("background-color","");
+});
+$("#connect").click(function(){
+	$("#home").css("background-color","");
+	$("#about").css("background-color","");
+	$("#pubs").css("background-color","");
+	$("#calendar").css("background-color","");
+	$("#connect").css("background-color","grey");
+	$("#support").css("background-color","");
+});
+$("#support").click(function(){
+	$("#home").css("background-color","");
+	$("#about").css("background-color","");
+	$("#pubs").css("background-color","");
+	$("#calendar").css("background-color","");
+	$("#connect").css("background-color","");
+	$("#support").css("background-color","grey");
+});
+</script>
+
    
 </div><!-- close container-->
 
