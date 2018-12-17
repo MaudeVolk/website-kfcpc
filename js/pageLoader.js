@@ -22,13 +22,16 @@ $(document).ready(function() {
     loadPage(div, localStorage["currentContent"]);
 
     $(".replaceContent").click(function() {
-
-        var page = $(this).attr("name");
+		var page = $(this).attr("name");
         localStorage["currentContent"] = page;
         loadPage(div, page);
-
     });
 
+	// "click" the publication tab whenever the link on the homepage is clicked
+	$("#homepubs").click(function() {
+		$("#pubs").click();
+	});
+	
     var originalTitle = document.title
 
     function hashChange() {

@@ -1,4 +1,4 @@
-* {
+ {
     -webkit-border-radius: 0 !important;
     -moz-border-radius: 0 !important;
     border-radius: 0;
@@ -91,28 +91,34 @@ ul li .left-list {
 /*------------------------------------------------------------*/
 
 .nav-bar-active {
-    color: white;
+    /*color: white;*/
+	color: red;
     background-color: grey;
 }
 
 .nav-bar-active:hover {
     color: black;
-    background-color: #000000;
+    /*background-color: #000000;*/
+	background-color: red;
+	color:red;
 }
 
 .nav-bar-custom div#nav-bar {
     width: 100%;
     margin: auto;
 }
-
+/*******/
 .nav-bar-custom div#nav-item {
     width: 16.6667%;
     margin: auto;
 }
 
 .dropdown-menu li a:hover {
-    background-color: lightblue;
+    /*background-color: lightblue;*/
+	background-color: #cccccc;   /*was pale bule*/
     background-image: none;
+	color:white;
+	font-weight:bold;
 }
 
 .btn {
@@ -136,7 +142,28 @@ color: black;
 	border-color: blue;
     padding: 10px;
     box-shadow: 5px 8px gray;
-	
+
+}
+
+.btnCalendar {
+color: black;
+    /* padding: 15px 32px; */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5em;
+	background-color: white;
+    margin: 4px 2px;
+    cursor: pointer;
+	border-radius: 10% !important;
+	border: 2px solid;
+	border-color: blue;
+    padding: 10px;
+    box-shadow: 5px 8px gray;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 94b08bebb2254c4f0d3b0a63bcac716a73e74ac5
 }
 
 .content-section {
