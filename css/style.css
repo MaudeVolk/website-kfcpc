@@ -347,52 +347,206 @@ small @media screen and (max-width: 992px)and (min-width: 768px)
 extra small @media screen and (max-width: 767px) and  (min-width: 500px)
 extra, extra small @media screen and (max-width: 499px)
 */
+/*redesigning for mobile first which is recommended for Bootstrap 3 */
+/* Customer, iPhone Retina  */
+@media only screen and (min-width : 320px)  {
 
-/* large screen */
-@media screen and (max-width: 1300px)and (min-width: 1200px) {
-	/*
-    #homeImage {
+    .text-with-picture {
+        margin-left: 0;
+    }
+
+    .title-bar img {
         display: none;
     }
-	*/
+
+    h1#titleText {
+        font-size: 1.5em;
+    }
+
+    .nav-bar-custom div#nav-bar {
+        width: 100%;
+        margin: auto;
+    }
+
+    .nav-bar-custom div#nav-item {
+        width: 50%;
+        margin: auto;
+    }
+
     #logoImage {
         display: none;
     }
-    #homeHeader {
-        text-align: center;
+
+    .title-bar div {
+        height: 8em;
     }
-    .sidebar-content{
-        min-height: 20em;
+
+    /* the sidebar including its title */
+    .sidebar-plain-service {
+        /*display: none;*/
+        -webkit-border-radius: 0 0 20px 20px !important;
+        -moz-border-radius: 0 0 20px 20px !important;
+        border-radius: 0 0 20px 20px !important;
     }
-}
- medium screen
-@media screen and (max-width: 1199px)and (min-width: 993px) {
+
+    .increaseTop{
+        margin-top: 0;
+    }
+    .increaseBottom{
+        margin-bottom:0;
+    }
 
     .sidebar-content {
-        min-height: 20em;
-    }
-}
- /*   .sidebar-plain-service {
-        display: none;
+        min-height: 15%;
     }
 
-	
+    footer {
+        padding: 0;
+        border-radius: 25px !important
+    }
+
+    .main-content {
+
+        /*padding-top: 1em;
+         padding-left: 1em;
+         padding-right: 1em;*/
+    }
+
+    /*
+    img#portrait {
+        width: 70px;
+        height: 70px;
+    }
+    */
     #homeImage {
         display: none;
     }
-	
-	
-    #logoImage {
-        display: none;
-    }
+
     #homeHeader {
         text-align: center;
-    }*/
+    }
+
+    div.contactDetails p.contactItem {
+        font-size: 1.5em;
+        border: 1px solid #000;
+        padding: 1em;
+        overflow-x: scroll;
+    }
+
+    #inputStartTime {
+        display: block;
+        width: 97%;
+    }
+
+    span.left {
+        display: block;
+        float: none;
+        width: 97%;
+    }
+
+    #inputEndTime {
+        display: block;
+        width: 97%;
+    }
+}
+
+ /* Extra Small Devices, Phones */
+ @media only screen and (min-width : 480px){
+     .text-with-picture {
+         margin-left: 0;
+     }
+
+     .title-bar img {
+         display: none;
+     }
+
+     h1#titleText {
+         font-size: 1.5em;
+     }
+
+     .nav-bar-custom div#nav-bar {
+         width: 100%;
+         margin: auto;
+     }
+
+     .nav-bar-custom div#nav-item {
+         width: 50%;
+         margin: auto;
+     }
+
+     #logoImage {
+         display: none;
+     }
+
+     .title-bar div {
+         height: 8em;
+     }
+
+     /* the sidebar including its title */
+     .sidebar-plain-service {
+         /*display: none;*/
+         -webkit-border-radius: 20px 0 20px 0 !important;
+         -moz-border-radius: 20px 0 20px 0 !important;
+         border-radius: 20px 0 20px 0 !important;
+     }
+
+     .sidebar-content {
+         min-height: 15%;
+     }
+
+     footer {
+         padding: 0;
+         border-radius: 25px !important
+     }
+
+     .main-content {
+         padding-top: 1em;
+         padding-left: 1em;
+         /*padding-right: 1em;*/
+     }
+
+     /*
+     img#portrait {
+         width: 70px;
+         height: 70px;
+     }
+     */
+     #homeImage {
+         display: none;
+     }
+
+     #homeHeader {
+         text-align: center;
+     }
+
+     div.contactDetails p.contactItem {
+         font-size: 1.5em;
+         border: 1px solid #000;
+         padding: 1em;
+         overflow-x: scroll;
+     }
+
+     #inputStartTime {
+         display: block;
+         width: 97%;
+     }
+
+     span.left {
+         display: block;
+         float: none;
+         width: 97%;
+     }
+
+     #inputEndTime {
+         display: block;
+         width: 97%;
+     }
+ }
 
 
 
-/* small screen */
-@media screen and (max-width: 992px)and (min-width: 768px) {
+/* small screen, Tablets */
+@media only screen and (min-width: 768px) {
 	
     .title-bar img {
         display: none;
@@ -405,7 +559,7 @@ extra, extra small @media screen and (max-width: 499px)
         margin: auto;
     }
     .nav-bar-custom div#nav-item {
-        width: 33%;
+        width: 33.3%;
         margin: auto;
     }
     .title-bar div {
@@ -460,203 +614,48 @@ extra, extra small @media screen and (max-width: 499px)
     }
 }
 
+ /* medium devices, desktops */
+ @media  only screen and (min-width: 992px) {
 
-/* extra small screen */
-@media screen and (max-width: 767px) and  (min-width: 500px){
-
-    .text-with-picture {
-        margin-left: 0;
-    }
-
-    .title-bar img {
+     .sidebar-content {
+         min-height: 20em;
+     }
+ }
+ /*   .sidebar-plain-service {
         display: none;
     }
 
-    h1#titleText {
-        font-size: 1.5em;
-    }
 
-    .nav-bar-custom div#nav-bar {
-        width: 100%;
-        margin: auto;
-    }
-
-    .nav-bar-custom div#nav-item {
-        width: 50%;
-        margin: auto;
-    }
-
-    #logoImage {
-        display: none;
-    }
-
-    .title-bar div {
-        height: 8em;
-    }
-
-    /* the sidebar including its title */
-    .sidebar-plain-service {
-        /*display: none;*/
-        -webkit-border-radius: 20px 0 20px 0 !important;
-        -moz-border-radius: 20px 0 20px 0 !important;
-        border-radius: 20px 0 20px 0 !important;
-    }
-
-    .sidebar-content {
-        min-height: 15%;
-    }
-
-    footer {
-        padding: 0;
-        border-radius: 25px !important
-    }
-
-    .main-content {
-        padding-top: 1em;
-        padding-left: 1em;
-        /*padding-right: 1em;*/
-    }
-
-    /*
-    img#portrait {
-        width: 70px;
-        height: 70px;
-    }
-    */
     #homeImage {
         display: none;
     }
 
+
+    #logoImage {
+        display: none;
+    }
     #homeHeader {
         text-align: center;
-    }
+    }*/
 
-    div.contactDetails p.contactItem {
-        font-size: 1.5em;
-        border: 1px solid #000;
-        padding: 1em;
-        overflow-x: scroll;
-    }
 
-    #inputStartTime {
-        display: block;
-        width: 97%;
-    }
+ /* large devices, wide screens */
+@media only screen and (min-width: 1200px) {
 
-    span.left {
-        display: block;
-        float: none;
-        width: 97%;
-    }
-
-    #inputEndTime {
-        display: block;
-        width: 97%;
-    }
-
+    /*
+#homeImage {
+    display: none;
 }
-
-/* extra, extra small screen */
-@media screen and (max-width: 499px) {
-
-    .text-with-picture {
-        margin-left: 0;
-    }
-
-    .title-bar img {
-        display: none;
-    }
-
-    h1#titleText {
-        font-size: 1.5em;
-    }
-
-    .nav-bar-custom div#nav-bar {
-        width: 100%;
-        margin: auto;
-    }
-
-    .nav-bar-custom div#nav-item {
-        width: 50%;
-        margin: auto;
-    }
-
+*/
     #logoImage {
         display: none;
     }
-
-    .title-bar div {
-        height: 8em;
-    }
-
-    /* the sidebar including its title */
-   .sidebar-plain-service {
-            /*display: none;*/
-            -webkit-border-radius: 0 0 20px 20px !important;
-            -moz-border-radius: 0 0 20px 20px !important;
-            border-radius: 0 0 20px 20px !important;
-        }
-		
-	.increaseTop{
-          margin-top: 0;
-     }
-    .increaseBottom{
-          margin-bottom:0;
-     }
-
-    .sidebar-content {
-        min-height: 15%;
-    }
-
-    footer {
-        padding: 0;
-        border-radius: 25px !important
-    }
-
-    .main-content {
-		
-       /*padding-top: 1em;
-        padding-left: 1em;
-        padding-right: 1em;*/
-    }
-
-    /*
-    img#portrait {
-        width: 70px;
-        height: 70px;
-    }
-    */
-    #homeImage {
-        display: none;
-    }
-
     #homeHeader {
         text-align: center;
     }
-
-    div.contactDetails p.contactItem {
-        font-size: 1.5em;
-        border: 1px solid #000;
-        padding: 1em;
-        overflow-x: scroll;
+    .sidebar-content{
+        min-height: 20em;
     }
-
-    #inputStartTime {
-        display: block;
-        width: 97%;
-    }
-
-    span.left {
-        display: block;
-        float: none;
-        width: 97%;
-    }
-
-    #inputEndTime {
-        display: block;
-        width: 97%;
-    }
-
 }
 
 

@@ -52,9 +52,10 @@
       <select class="form-control" name="facility" id="inputFacility">
         <option value="">Select a facility</option>
 		<option value="conference">Chapel</option>
-		<option value="conference">Keene Room</option>
+		<option value="keene">Keene Room</option>
 		<option value="conference">Conference</option>
         <option value="gym">Gym</option>
+        <option value="basement">Basement</option>
         <option value="courtyard">Courtyard</option>
         <option value="picnic">Picnic Area</option>
       </select>
