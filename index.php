@@ -16,7 +16,7 @@ built with hand-typed code excluding Bootstrap and JQuery.
   Any future modifications should stick as close to these design concepts as
 possible.
 
-Authors: Donald Nash <donaldnash1989@gmail.com>, Maude Volk <maudevolk@gmail.com>
+Authors: Donald Nash <donaldnash1989@gmail.com>, Maude Volk <maudevolk@gmail.com>, Donna Walker <dwalker1@pstcc.edu>
 Edited by: Andrew Berger <meatberger@gmail.com>
 
 Version 2.0.0.1
@@ -136,14 +136,13 @@ first release: July 21, 2017
 		  <script>
 		    function getfocus()
 			{
-				document.getElemtnyById("myanchor").focus();
+				document.getElementById("myanchor").focus();
 			}
 		  </script>
 
             <!-- About button's list -->
 			
             <ul class="dropdown-menu" role="menu">
-			<li><a class="replaceContent" name="test"><span class="glyphicon glyphicon-ok"></span> Test</a></li>
               <li><a class="replaceContent" name="mission"><span class="glyphicon glyphicon-ok"></span> Mission</a></li>
               <li><a class="replaceContent" name="about"><span class="glyphicon glyphicon-book"></span> Who we are</a></li>
               <li><a class="replaceContent" name="staff"><span class="glyphicon glyphicon-user"></span> Staff</a></li>
@@ -204,8 +203,7 @@ first release: July 21, 2017
 			  <li style="padding-left: .25em"><a href="http://www.petn.org/" target="_blank">Presbytery of East Tennessee</a></li>
 			  <li style="padding-left: .25em"><a href="http://cpcmc.org/evotions/" target="_blank">eVotions</a></li>
 			  <li style="padding-left: .25em"><a href="https://www.camcabincrafts.com/" target="_blank">CAM Cabin Crafts</a></li>
-			  
-              <li style="padding-left: .25em"><a href="http://cumberlandchristianacad.org/" target="_blank">Cumberland Christian Academy</a></li>
+
               <li style="padding-left: .25em"><a href="https://www.classicalconversations.com/" target="_blank">Classical Conversations</a></li>
 			  <li style="padding-left: .25em"><a href="http://www.thursdayconnection.org/" target="_blank">Thursday Connection</a></li>
 			  <li style="padding-left: .25em"><a href="http://tmweb.troopmaster.com/Website/Home" target="_blank">Boy Scout Troop 20</a></li>
@@ -251,7 +249,6 @@ first release: July 21, 2017
             <li >10:45 AM</li>
             <li >Sunday School</li>
             <li class="increaseBottom">9:30 AM</li>
-			<li>Christmas Musical<br/>Sunday, December 16th <br/> 10:45 AM<br/></li>
 			<li><hr style="border: 1px solid grey;"></li>
 			<li>Candlelight Service<br/>Communion<br/>Monday, December 23rd<br/>5:00 PM</li>
 			<br/>
