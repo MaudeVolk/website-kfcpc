@@ -243,16 +243,16 @@ first release: July 21, 2017
         <h3 class="increaseTop">Services</h3>
 		<!-- took out class="increaseBottom" to make special event fit -->
         <div class="sidebar-content">
-		
+
           <ul>
             <li >Sunday Service</li>
             <li >10:45 AM</li>
             <li >Sunday School</li>
             <li class="increaseBottom">9:30 AM</li>
 			<li><hr style="border: 1px solid grey;"></li>
-			<li>Candlelight Service<br/>Communion<br/>Monday, December 23rd<br/>5:00 PM</li>
+		<!--<li>Candlelight Service<br/>Communion<br/>Monday, December 23rd<br/>5:00 PM</li>
 			<br/>
-			
+		-->
 			<!-- this anchor has its very own id so that only publications tab is "clicked" when the link on the homepage is clicked -->
 			<li ><a id="homepubs" class="replaceContent" style="color:white" name="publications">Cumberlander/Bulletin</a></li>
 			
@@ -264,7 +264,7 @@ first release: July 21, 2017
               <a class="replaceContent social-link" name="contact">Contact</a> |
               <a href="https://www.facebook.com/Knoxville-First-Cumberland-Presbyterian-Church-219987585273/" class="social-link" target="_blank"><img src="images/logo/facebook-icon-preview-1-400x400.png" class="social-link-img"/></a> |
               <a class="replaceContent social-link" name="map">Map</a> |
-              <a href="#" class="social-link">Give</a>
+              <button class="btn btn-primary" type="button">Give</button>
               <!-- count.php is a counter and count_file.txt holds the number for count.php to access -->
               <p style="color:blue"><?php include "count.php" ?> visitors</p>
               <!-- Close the footer for the page -->
