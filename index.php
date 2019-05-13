@@ -136,7 +136,7 @@ first release: July 21, 2017
 		  <script>
 		    function getfocus()
 			{
-				document.getElementById("myanchor").focus();
+				document.getElementById("about").focus();
 			}
 		  </script>
 
