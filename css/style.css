@@ -499,10 +499,10 @@ extra, extra small @media screen and (max-width: 499px)
          height: 70px;
      }
      */
-     #homeImage {
+     /*#homeImage {
          display: none;
      }
-
+    */
      #homeHeader {
          text-align: center;
      }
