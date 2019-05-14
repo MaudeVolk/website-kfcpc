@@ -409,12 +409,6 @@ extra, extra small @media screen and (max-width: 499px)
         border-radius: 25px !important
     }
 
-    .main-content {
-
-        /*padding-top: 1em;
-         padding-left: 1em;
-         padding-right: 1em;*/
-    }
 
     #homeHeader {
         text-align: center;
@@ -446,8 +440,6 @@ extra, extra small @media screen and (max-width: 499px)
 
  /* Extra Small Devices, Phones */
  @media only screen and (min-width : 480px){
-
-
      .text-with-picture {
          margin-left: 0;
      }
@@ -501,7 +493,15 @@ extra, extra small @media screen and (max-width: 499px)
          /*padding-right: 1em;*/
      }
 
-
+     /*
+     img#portrait {
+         width: 70px;
+         height: 70px;
+     }
+     */
+     #homeImage {
+         display: none;
+     }
 
      #homeHeader {
          text-align: center;
@@ -570,10 +570,10 @@ extra, extra small @media screen and (max-width: 499px)
 	
 	
     img#portrait {
+
         width: 200px;
         height: 180px;
-    }
-	
+    }   
 
     #homeHeader {
         text-align: center;
@@ -605,7 +605,8 @@ extra, extra small @media screen and (max-width: 499px)
      .sidebar-content {
          min-height: 20em;
      }
- }
+ }//end of medium devices
+
  /*   .sidebar-plain-service {
         display: none;
     }
@@ -615,12 +616,11 @@ extra, extra small @media screen and (max-width: 499px)
     }
     #homeHeader {
         text-align: center;
-    }*/
+    } reserve for special use to add to medium devices*/
 
 
  /* large devices, wide screens */
 @media only screen and (min-width: 1200px) {
-
 
     #logoImage {
         display: none;
