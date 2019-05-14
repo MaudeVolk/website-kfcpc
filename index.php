@@ -136,7 +136,7 @@ first release: July 21, 2017
 		  <script>
 		    function getfocus()
 			{
-				document.getElementById("myanchor").focus();
+				document.getElementById("about").focus();
 			}
 		  </script>
 
@@ -243,16 +243,16 @@ first release: July 21, 2017
         <h3 class="increaseTop">Services</h3>
 		<!-- took out class="increaseBottom" to make special event fit -->
         <div class="sidebar-content">
-		
+
           <ul>
             <li >Sunday Service</li>
             <li >10:45 AM</li>
             <li >Sunday School</li>
             <li class="increaseBottom">9:30 AM</li>
 			<li><hr style="border: 1px solid grey;"></li>
-			<li>Candlelight Service<br/>Communion<br/>Monday, December 23rd<br/>5:00 PM</li>
+		<!--<li>Candlelight Service<br/>Communion<br/>Monday, December 23rd<br/>5:00 PM</li>
 			<br/>
-			
+		-->
 			<!-- this anchor has its very own id so that only publications tab is "clicked" when the link on the homepage is clicked -->
 			<li ><a id="homepubs" class="replaceContent" style="color:white" name="publications">Cumberlander/Bulletin</a></li>
 			
@@ -264,7 +264,8 @@ first release: July 21, 2017
               <a class="replaceContent social-link" name="contact">Contact</a> |
               <a href="https://www.facebook.com/Knoxville-First-Cumberland-Presbyterian-Church-219987585273/" class="social-link" target="_blank"><img src="images/logo/facebook-icon-preview-1-400x400.png" class="social-link-img"/></a> |
               <a class="replaceContent social-link" name="map">Map</a> |
-              <a href="#" class="social-link">Give</a>
+<div id="cp4b81647b5c"  style="margin: 10px, 0;   " onclick="document.getElementById('pay_now_form_cce0c50497').submit()"><div><div class='r-bg '><span class='r-fg r-fg-3'></span> <span class='r-fg r-fg-2'></span> <span class='r-fg r-fg-1'></span> <span class='r-fg r-fg-0'></span> </div><form action="https://checkout.globalgatewaye4.firstdata.com/pay" id="pay_now_form_cce0c50497" method="post"><input type="hidden" name="x_login" value="WSP-KNOXV-NP@Y3QC9UQ" /><input type="hidden" name="x_show_form" value="PAYMENT_FORM" /><input type="hidden" name="x_fp_sequence" value="15568163551174278165" /><input type="hidden" name="x_fp_hash" value="PNB-1.0-bfe395f5852bdbe6e594474e3250b56812ba96c0" /><input type="hidden" name="x_amount" value="" /><input type="hidden" name="x_currency_code" value="USD" /><input type="hidden" name="x_test_request" value="FALSE" /><input type="hidden" name="x_relay_response" value="" /><input type="hidden" name="donation_prompt" value="Donate" /><input type="hidden" name="button_code" value="Pay Now Knoxville Cumberland Presby" /><div class="cpwrap"><button type="button">Donate</button></div></form><div class='r-bg '><span class='r-fg r-fg-0'></span> <span class='r-fg r-fg-1'></span> <span class='r-fg r-fg-2'></span> <span class='r-fg r-fg-3'></span> </div></div></div><style type="text/css">div#cp4b81647b5c{width: 100%; background-color: #337ab7;}div#cp4b81647b5c button {font-family: "Times", "Noto Serif", Serif}div#cp4b81647b5c:hover{cursor: pointer}div#cp4b81647b5c * {background-color: #ffffff;}div#cp4b81647b5c form{margin:0; padding:0;text-align:center}div#cp4b81647b5c div.cpwrap {width: 100%;border:1px solid silver; border-radius: 10px; margin:0 auto;padding: 0px; background-color: #337ab7}div#cp4b81647b5c button{width: 95%;border:1px solid silver; border-radius: 10px; margin:0;padding: 3px 0; background-color: #337ab7;text-align: center; color: #FFFFFF; }div#cp4b81647b5c:hover button {text-decoration: underline}div#cp4b81647b5c button:focus,div#cp4b81647b5c button:visited,div#cp4b81647b5c button:active{border:none;outline: none}div#cp4b81647b5c button {font-size: 24px}div#cp4b81647b5c div.cpwrap {border-left: 2px solid silver; border-right: 2px solid silver}div#cp4b81647b5c .r-fg{background-color: #ffffff; border-color: #ffffff}div#cp4b81647b5c .r-bg{background-color: white}div#cp4b81647b5c .r-fg{border-style: solid; border-width: 0px 1px; overflow: hidden; display: block; height: 1px; font-size: 1px}div#cp4b81647b5c .r-fg-0{margin-left: 1px; margin-right: 1px; border-width: 0px 1px !important; height: 1px !important}div#cp4b81647b5c .r-fg-1{margin-left: 2px; margin-right: 2px}div#cp4b81647b5c .r-fg-2{margin-left: 3px; margin-right: 3px}div#cp4b81647b5c .r-fg-3{margin-left: 5px; margin-right: 5px}</style>
+
               <!-- count.php is a counter and count_file.txt holds the number for count.php to access -->
               <p style="color:blue"><?php include "count.php" ?> visitors</p>
               <!-- Close the footer for the page -->

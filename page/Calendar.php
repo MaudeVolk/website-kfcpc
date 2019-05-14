@@ -84,6 +84,10 @@ table td {
     visibility: visible;
 }
 
+<!- Media adjustment:@media only screen and (max-width: 1200px)	@media only screen and (max-width: 768px)->
+@media only screen and (max-width: 1200px){
+	
+}
 </style>
 
 <?php
